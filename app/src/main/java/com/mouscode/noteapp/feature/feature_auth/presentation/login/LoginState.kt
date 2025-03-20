@@ -1,0 +1,9 @@
+package com.mouscode.noteapp.feature.feature_auth.presentation.login
+
+data class LoginState (
+    val loggedInUser : String? = null,
+    val username: String = "user",
+    val password: String = "pass",
+    val isError: String? = null,
+    val isRegister: Boolean = false,
+)

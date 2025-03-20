@@ -2,14 +2,14 @@ package com.mouscode.noteapp.di
 
 import android.app.Application
 import androidx.room.Room
-import com.mouscode.noteapp.feature_note.data.data_source.NoteDatabase
-import com.mouscode.noteapp.feature_note.data.repository.NoteRepositoryImpl
-import com.mouscode.noteapp.feature_note.domain.repository.NoteRepository
-import com.mouscode.noteapp.feature_note.domain.use_case.AddNote
-import com.mouscode.noteapp.feature_note.domain.use_case.DeleteNote
-import com.mouscode.noteapp.feature_note.domain.use_case.GetNote
-import com.mouscode.noteapp.feature_note.domain.use_case.GetNotes
-import com.mouscode.noteapp.feature_note.domain.use_case.NoteUseCases
+import com.mouscode.noteapp.feature.feature_note.data.data_source.NoteDatabase
+import com.mouscode.noteapp.feature.feature_note.data.repository.NoteRepositoryImpl
+import com.mouscode.noteapp.feature.feature_note.domain.repository.NoteRepository
+import com.mouscode.noteapp.feature.feature_note.domain.use_case.AddNote
+import com.mouscode.noteapp.feature.feature_note.domain.use_case.DeleteNote
+import com.mouscode.noteapp.feature.feature_note.domain.use_case.GetNote
+import com.mouscode.noteapp.feature.feature_note.domain.use_case.GetNotes
+import com.mouscode.noteapp.feature.feature_note.domain.use_case.NoteUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

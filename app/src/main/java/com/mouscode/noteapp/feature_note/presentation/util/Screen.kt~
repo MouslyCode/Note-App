@@ -1,3 +1,0 @@
-package com.mouscode.noteapp.feature_note.presentation.util
-
-sealed class Screen(val route: String) {
