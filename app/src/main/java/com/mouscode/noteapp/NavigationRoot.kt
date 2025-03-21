@@ -6,6 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -14,13 +15,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.navigation.toRoute
+import com.mouscode.noteapp.feature.feature_auth.presentation.login.LoginScreen
+import com.mouscode.noteapp.feature.feature_auth.presentation.login.LoginViewModel
 import com.mouscode.noteapp.feature.feature_note.presentation.add_edit_note.AddEditNoteScreen
 import com.mouscode.noteapp.feature.feature_note.presentation.notes.NoteScreen
-import com.mouscode.noteapp.feature.feature_note.presentation.util.Screen
+import com.mouscode.noteapp.util.Screen
 import kotlinx.serialization.Serializable
-
-@Serializable
-data object LoginRoute
 
 @Serializable
 data class LoggedInRoute(val username: String)
@@ -29,10 +29,14 @@ data class LoggedInRoute(val username: String)
 fun NavigationRoot(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Screen.NotesScreen.route
+        startDestination = Screen.LoginScreen.route
     ){
-        composable<LoginRoute> {
-
+        composable(route = Screen.LoginScreen.route) {
+            val viewModel = viewModel<LoginViewModel>()
+            LoginScreen(
+                state = viewModel.state,
+                onEvent = viewModel::onEvent
+            )
         }
         composable<LoggedInRoute> {
             val username = it.toRoute<LoggedInRoute>().username

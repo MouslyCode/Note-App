@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.mouscode.noteapp.feature.feature_note.presentation.notes.components.OrderSection
-import com.mouscode.noteapp.feature.feature_note.presentation.util.Screen
+import com.mouscode.noteapp.util.Screen
 import com.mouscode.noteapp.feature.feature_note.presentation.notes.components.NoteItem
 import kotlinx.coroutines.launch
 
