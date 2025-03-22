@@ -1,4 +1,4 @@
-package com.mouscode.noteapp.feature.feature_auth.presentation.login
+package com.mouscode.noteapp.feature.feature_auth.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

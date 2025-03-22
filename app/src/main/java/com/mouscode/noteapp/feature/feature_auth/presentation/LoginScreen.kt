@@ -1,8 +1,6 @@
-package com.mouscode.noteapp.feature.feature_auth.presentation.login
+package com.mouscode.noteapp.feature.feature_auth.presentation
 
-import android.content.res.Resources
 import androidx.activity.ComponentActivity
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,8 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -28,10 +24,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mouscode.noteapp.feature.feature_auth.data.data_source.AccountManager
-import com.mouscode.noteapp.feature.feature_auth.data.repository.AuthRepositoryImpl
 import com.mouscode.noteapp.ui.theme.NoteAppTheme
 import kotlinx.coroutines.launch
-import java.nio.file.WatchEvent
 
 @Composable
 fun LoginScreen(
@@ -104,7 +98,7 @@ fun LoginScreen(
             onClick = {
                 scope.launch {
                     if (state.isRegister){
-                        val result = accountManager.signUp(
+                        val result = accountManager?.signUp(
                             username = state.username,
                             password = state.password
                         )

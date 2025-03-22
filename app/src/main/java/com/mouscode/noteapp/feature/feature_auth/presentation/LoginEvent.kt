@@ -1,4 +1,4 @@
-package com.mouscode.noteapp.feature.feature_auth.presentation.login
+package com.mouscode.noteapp.feature.feature_auth.presentation
 
 import com.mouscode.noteapp.feature.feature_auth.domain.util.SignUpResult
 

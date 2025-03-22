@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "269582477540",
+    "project_id": "noteapp-ada4f",
+    "storage_bucket": "noteapp-ada4f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269582477540:android:cb4b61df35c1d9752e64f1",
+        "android_client_info": {
+          "package_name": "com.mouscode.noteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269582477540-tgi65j88tuh8ee9l5i50cldbf46j7amh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mouscode.noteapp",
+            "certificate_hash": "57dbdd37b7117e486363a86afa15a50d2692bc32"
+          }
+        },
+        {
+          "client_id": "269582477540-8mo8bivq3joti3mm1ldrq5fprhmlcob8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAVl6a2jNe8Rb0wmkm0rmYJTFnZVHkys4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269582477540-8mo8bivq3joti3mm1ldrq5fprhmlcob8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
