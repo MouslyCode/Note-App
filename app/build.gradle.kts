@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.mouscode.noteapp"
-        minSdk = 24
+        minSdk = 34
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"

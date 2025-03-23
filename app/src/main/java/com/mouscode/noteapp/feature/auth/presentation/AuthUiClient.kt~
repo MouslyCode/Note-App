@@ -63,6 +63,29 @@ class AuthUiClient (
         }
     }
 
+//    fun signInWithGoogle(): Flow<AuthResult> = callbackFlow {
+//        try {
+//            val credentialManager = CredentialManager.create(context)
+//
+//            val googleIdOption = GetGoogleIdOption.Builder()
+//                .setFilterByAuthorizedAccounts(false)
+//                .setServerClientId(context.getString(R.string.web_client_id))
+//                .setAutoSelectEnabled(false)
+//                .setNonce(createNonce())
+//                .build()
+//
+//
+//            val request = GetCredentialRequest.Builder()
+//                .addCredentialOption(googleIdOption)
+//                .build()
+//
+//            val result = credentialManager.getCredential(
+//                request = request,
+//                context = context
+//            )
+//        }
+//    }
+
     suspend fun signInWithGoogle(): AuthResult {
         try {
             val credentialManager = CredentialManager.create(context)
