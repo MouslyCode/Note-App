@@ -1,0 +1,4 @@
+package com.mouscode.noteapp.feature.auth.domain.usecase
+
+class SignWithGoogle {
+}

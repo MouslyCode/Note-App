@@ -4,20 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import com.mouscode.noteapp.feature.feature_note.presentation.add_edit_note.AddEditNoteScreen
-import com.mouscode.noteapp.feature.feature_note.presentation.notes.NoteScreen
-import com.mouscode.noteapp.util.Screen
 import com.mouscode.noteapp.ui.theme.NoteAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

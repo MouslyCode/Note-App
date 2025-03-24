@@ -1,0 +1,22 @@
+package com.mouscode.noteapp.di
+
+import android.content.Context
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
+import com.mouscode.noteapp.feature.auth.data.repository.AuthRepositoryImpl
+import com.mouscode.noteapp.feature.auth.domain.repository.AuthRepository
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AuthModule {
+
+    fun provideAuthRepository(context: Context): AuthRepository = AuthRepositoryImpl(
+        context,
+        auth = fireba,
+        credentialManager = TODO(),
+    )
+
+}

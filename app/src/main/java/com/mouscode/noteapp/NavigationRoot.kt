@@ -6,17 +6,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.toRoute
-import com.mouscode.noteapp.feature.feature_auth.presentation.LoginScreen
-import com.mouscode.noteapp.feature.feature_auth.presentation.LoginViewModel
-import com.mouscode.noteapp.feature.feature_note.presentation.add_edit_note.AddEditNoteScreen
-import com.mouscode.noteapp.feature.feature_note.presentation.notes.NoteScreen
+import com.mouscode.noteapp.feature.note.presentation.add_edit_note.AddEditNoteScreen
+import com.mouscode.noteapp.feature.note.presentation.notes.NoteScreen
 import com.mouscode.noteapp.util.Screen
 import kotlinx.serialization.Serializable
 
@@ -27,15 +24,15 @@ data class LoggedInRoute(val username: String)
 fun NavigationRoot(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Screen.LoginScreen.route
+        startDestination = Screen.NotesScreen.route
     ){
-        composable(route = Screen.LoginScreen.route) {
-            val viewModel = viewModel<LoginViewModel>()
-            LoginScreen(
-                state = viewModel.state,
-                onEvent = viewModel::onEvent
-            )
-        }
+//        composable(route = Screen.LoginScreen.route) {
+//            val viewModel = viewModel<LoginViewModel>()
+//            LoginScreen(
+//                state = viewModel.state,
+//                onEvent = viewModel::onEvent
+//            )
+//        }
         composable<LoggedInRoute> {
             val username = it.toRoute<LoggedInRoute>().username
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
