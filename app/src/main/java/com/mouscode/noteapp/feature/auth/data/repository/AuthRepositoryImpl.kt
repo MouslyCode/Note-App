@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.mouscode.noteapp.R
 import com.mouscode.noteapp.feature.auth.domain.repository.AuthRepository
-import com.mouscode.noteapp.feature.auth.presentation.util.AuthResponse
+import com.mouscode.noteapp.feature.auth.data.repository.util.AuthResponse
 import kotlinx.coroutines.tasks.await
 import java.security.MessageDigest
 import java.util.UUID

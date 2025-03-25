@@ -40,7 +40,6 @@ import androidx.navigation.NavController
 import com.mouscode.noteapp.feature.note.presentation.notes.components.OrderSection
 import com.mouscode.noteapp.util.Screen
 import com.mouscode.noteapp.feature.note.presentation.notes.components.NoteItem
-import com.mouscode.noteapp.feature.note.presentation.notes.util.NoteEvent
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

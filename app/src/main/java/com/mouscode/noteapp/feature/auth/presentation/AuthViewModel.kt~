@@ -20,6 +20,6 @@ class AuthViewModel @Inject constructor(
     private val _state = mutableStateOf(AuthState())
     val state: State<AuthState> = _state
 
-
+    
 
 }

@@ -8,6 +8,8 @@ import com.mouscode.noteapp.feature.note.domain.model.Note
 import com.mouscode.noteapp.feature.note.domain.use_case.NoteUseCases
 import com.mouscode.noteapp.feature.note.domain.util.NoteOrder
 import com.mouscode.noteapp.feature.note.domain.util.OrderType
+import com.mouscode.noteapp.feature.note.presentation.notes.util.NoteEvent
+import com.mouscode.noteapp.feature.note.presentation.notes.util.NoteState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn

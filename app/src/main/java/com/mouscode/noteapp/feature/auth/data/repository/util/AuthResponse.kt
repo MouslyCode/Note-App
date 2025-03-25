@@ -1,4 +1,4 @@
-package com.mouscode.noteapp.feature.auth.presentation.util
+package com.mouscode.noteapp.feature.auth.data.repository.util
 
 sealed interface AuthResponse {
     data object Success: AuthResponse

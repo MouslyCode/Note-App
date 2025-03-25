@@ -1,6 +1,6 @@
 package com.mouscode.noteapp.feature.auth.domain.repository
 
-import com.mouscode.noteapp.feature.auth.presentation.util.AuthResponse
+import com.mouscode.noteapp.feature.auth.data.repository.util.AuthResponse
 
 interface AuthRepository {
     suspend fun createAccountWithEmail(email: String,password: String): AuthResponse

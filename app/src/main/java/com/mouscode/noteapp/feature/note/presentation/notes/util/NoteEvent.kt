@@ -1,4 +1,4 @@
-package com.mouscode.noteapp.feature.note.presentation.notes
+package com.mouscode.noteapp.feature.note.presentation.notes.util
 
 import com.mouscode.noteapp.feature.note.domain.model.Note
 import com.mouscode.noteapp.feature.note.domain.util.NoteOrder
