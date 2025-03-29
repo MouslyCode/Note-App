@@ -51,6 +51,7 @@ dependencies {
 
     //Dagger Hilt
     implementation(libs.hilt.android)
+    implementation(libs.firebase.firestore)
     ksp(libs.hilt.android.compiler)
     ksp(libs.hilt.compiler)
 

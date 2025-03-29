@@ -15,10 +15,12 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Visibility
+import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -41,7 +43,6 @@ import com.mouscode.noteapp.R
 @Composable
 fun SignInScreen(modifier: Modifier = Modifier) {
     var isVisible by remember { mutableStateOf(false) }
-    var isRegister by remember { mutableStateOf(false) }
     NoteAppTheme {
         Scaffold { paddingValues ->
             Column(
@@ -61,7 +62,7 @@ fun SignInScreen(modifier: Modifier = Modifier) {
                 OutlinedTextField(
                     modifier = Modifier
                         .defaultMinSize(minWidth = 305.dp),
-                    value = "Email",
+                    value = "",
                     placeholder = {
                         Text(text = "Email")
                     },
@@ -72,24 +73,26 @@ fun SignInScreen(modifier: Modifier = Modifier) {
                     OutlinedTextField(
                         modifier = Modifier
                             .defaultMinSize(minWidth = 305.dp),
-                        value = "Password",
+                        value = "",
+                        placeholder = {
+                            Text(
+                                text = "Password",
+                            )
+                        },
                         onValueChange = {},
-                        suffix = {
-                            Icon(imageVector = Icons.Outlined.Visibility, contentDescription = null)
-                        }
-                    )
-                    Row (
-                        verticalAlignment = Alignment.CenterVertically,
-                    ){
-                        Text("Is Registered?", style = MaterialTheme.typography.labelMedium.copy(color = Color.Gray))
-                        Spacer(Modifier.width(8.dp))
-                        Switch(
-                            checked = isRegister,
-                            onCheckedChange = {
-                                isRegister = it
+                        trailingIcon = {
+                            IconButton(onClick = { isVisible = !isVisible }) {
+                                if (isVisible) Icon(
+                                    imageVector = Icons.Outlined.Visibility,
+                                    contentDescription = null
+                                )
+                                else Icon(
+                                    imageVector = Icons.Outlined.VisibilityOff,
+                                    contentDescription = null
+                                )
                             }
-                        )
-                    }
+                        },
+                    )
                 }
                 Spacer(modifier = Modifier.height(24.dp))
                 Button(

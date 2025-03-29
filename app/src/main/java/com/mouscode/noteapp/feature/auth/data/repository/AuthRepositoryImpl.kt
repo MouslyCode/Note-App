@@ -14,6 +14,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.mouscode.noteapp.R
 import com.mouscode.noteapp.feature.auth.domain.repository.AuthRepository
 import com.mouscode.noteapp.feature.auth.data.repository.util.AuthResponse
+import com.mouscode.noteapp.feature.auth.domain.model.User
 import kotlinx.coroutines.tasks.await
 import java.security.MessageDigest
 import java.util.UUID
@@ -36,12 +37,24 @@ class AuthRepositoryImpl(
     }
 
     override suspend fun createAccountWithEmail(
+        username: String,
         email: String,
         password: String
     ): AuthResponse {
         return try {
             val authResult = auth.createUserWithEmailAndPassword(email,password).await()
-            if (authResult.user != null) AuthResponse.Success
+            val firebaseUser = authResult.user
+            if (firebaseUser != null) {
+                AuthResponse.AuntenticatedUser(
+                    user = User(
+                        uid = firebaseUser.uid.toString(),
+                        email = firebaseUser.email.toString(),
+                        displayName = firebaseUser.displayName,
+                        photoUrl = firebaseUser.photoUrl.toString()
+                    )
+                )
+                AuthResponse.Success
+            }
             else AuthResponse.Failure(message = "User is already registered")
         } catch (e: Exception){
             e.printStackTrace()
@@ -55,7 +68,18 @@ class AuthRepositoryImpl(
     ): AuthResponse {
         return try {
             val authResult = auth.signInWithEmailAndPassword(email, password).await()
-            if (authResult.user != null) AuthResponse.Success
+            val firebaseUser = authResult.user
+            if (firebaseUser != null) {
+                AuthResponse.AuntenticatedUser(
+                    user = User(
+                        uid = firebaseUser.uid.toString(),
+                        email = firebaseUser.email.toString(),
+                        displayName = firebaseUser.displayName,
+                        photoUrl = firebaseUser.photoUrl.toString()
+                    )
+                )
+                AuthResponse.Success
+            }
             else AuthResponse.Failure(message = "Firebase Authentication Failed")
         } catch (e: Exception){
             e.printStackTrace()
@@ -92,8 +116,19 @@ class AuthRepositoryImpl(
 
                 val firebaseCredential = GoogleAuthProvider.getCredential(idToken,null)
                 val authResult = auth.signInWithCredential(firebaseCredential).await()
+                val firebaseUser = authResult.user
 
-                if(authResult.user != null) AuthResponse.Success
+                if(firebaseUser != null) {
+                    AuthResponse.AuntenticatedUser(
+                        user = User(
+                            uid = firebaseUser.uid.toString(),
+                            email = firebaseUser.email.toString(),
+                            displayName = firebaseUser.displayName,
+                            photoUrl = firebaseUser.photoUrl.toString()
+                        )
+                    )
+                    AuthResponse.Success
+                }
                 else AuthResponse.Failure(message = "Firebase Authentication Failed")
             } else {
                 AuthResponse.Failure(message = "Unexpected Credential Type")
@@ -108,10 +143,9 @@ class AuthRepositoryImpl(
         }
     }
 
-    override suspend fun SignOut(): AuthResponse {
+    override suspend fun signOut(): AuthResponse {
         return try {
             auth.signOut()
-
             try {
                 val clearRequest = ClearCredentialStateRequest()
                 credentialManager.clearCredentialState(clearRequest)

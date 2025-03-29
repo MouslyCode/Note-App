@@ -2,8 +2,8 @@ package com.mouscode.noteapp.feature.auth.domain.usecase
 
 import com.mouscode.noteapp.feature.auth.domain.repository.AuthRepository
 
-class SignOut(
+class CreateAccountWithEmail(
     private val repository: AuthRepository
 ) {
-    suspend operator fun invoke() = repository.signOut()
+    suspend operator fun invoke(email: String, password: String) = repository.createAccountWithEmail(email, password)
 }
