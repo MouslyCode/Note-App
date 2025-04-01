@@ -145,7 +145,7 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
                         )
                         Spacer(modifier = Modifier.width(16.dp))
                         Text(
-                            text = "Sign Up with Google",
+                            text = "Sign U with Google",
                             style = MaterialTheme.typography.labelLarge.copy(color = Color.White)
                         )
                     }
