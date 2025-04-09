@@ -165,12 +165,7 @@ class AuthRepositoryImpl(
     override suspend fun getUser(): User? {
         val firebaseUser = auth.currentUser
         return firebaseUser?.let {
-            User(
-                uid = it.uid,
-                email = it.email.toString(),
-                displayName = it.displayName,
-                photoUrl = it.photoUrl.toString(),
-            )
+            User
         }
     }
 }
